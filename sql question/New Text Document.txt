@@ -1,0 +1,44 @@
+1-Get First_Name from employee table using alias name “Employee Name”
+Ans :-  Select first_name Employee Name from employee
+
+2-Get FIRST_NAME, Joining year, Joining Month and Joining Date from employee
+table. 
+
+Ans:- Select FIRST_NAME, to_char(joining_date,'YYYY') JoinYear , to_char(joining_date,'Mon'), to_char(joining_date,'dd') from EMPLOYEE
+
+3- Get all employee details from the employee table order by First Name Ascending
+And Salary descending? 
+
+Ans:- Select * from employee order by FIRST_NAME asc,SALARY desc
+
+4- Get employee details from employee table whose first name contains „o?. 
+Ans :- Select * from EMPLOYEE where FIRST_NAME like '%o%'
+
+5- Get employee details from employee table whose joining month is “January”. 
+Ans:- Select * from EMPLOYEE where to_char(joining_date,'MM')='01' or Select * from EMPLOYEE where to_char(joining_date,'Mon')='Jan'
+
+6- Get department, total salary with respect to a department from employee table
+Order By total salary descending. 
+
+Ans:- Select DEPARTMENT,sum(SALARY) Total_Salary from employee group by DEPARTMENT order by Total_Salary descending
+
+7- Get department wise maximum salary from employee table order by salary
+ascending? 
+Ans :- select DEPARTMENT,avg(SALARY) AvgSalary from employee group by DEPARTMENT order by AvgSalary asc
+
+8- Select first_name, incentive amount from employee and incentives table for those
+Employees who have incentives and incentive amount greater than 3000
+
+Ans:- Select FIRST_NAME,INCENTIVE_AMOUNT from employee a inner join incentives B on A.EMPLOYEE_ID=B.EMPLOYEE_REF_ID and INCENTIVE_AMOUNT >3000
+
+9- Select 2nd Highest salary from employee table.
+
+Ans:- select min(SALARY) from (select top 2 * from employee) a
+
+10 - Select first_name, incentive amount from employee and incentives table for all
+Employees who got incentives using left join. 
+
+Ans :- Select FIRST_NAME,nvl(INCENTIVE_AMOUNT,0) from employee a right join incentives B on A.EMPLOYEE_ID=B.EMPLOYEE_REF_ID
+
+ 
+ 
